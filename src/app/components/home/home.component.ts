@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
+
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  public userDetails: any = [];
 
+  constructor(private apiservice: ApiService) {}
+  ngOnInit() {
+    this.apiservice.getData()
+    .subscribe(res=>{
+      this.userDetails=res;
+      console.log(this.userDetails)
+    })
+  }
 }
