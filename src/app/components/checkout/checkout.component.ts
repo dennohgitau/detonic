@@ -8,13 +8,15 @@ import { Router } from '@angular/router';
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css'],
-  })
+})
 
 export class CheckoutComponent implements OnInit {
-  
+
 
   qty = this.route.snapshot.paramMap.get('id');
   loading = false;
+  error  = '';
+  errors  = [];
 
   form = {
     quantity: this.route.snapshot.paramMap.get('id'),
@@ -77,17 +79,17 @@ export class CheckoutComponent implements OnInit {
       }
     });
   }
-  navigateToRoute() {
-    this.router.navigate(['/success']);
+  navigateToRoute(id: any) {
+    this.router.navigate(['/success', id]);
   }
-  toggleLoading(){
+  toggleLoading() {
     this.loading = true;
 
     setTimeout(() => {
       this.loading = false;
     }, 3000);
     console.log(this.loading);
-    
+
 
   }
 
@@ -95,11 +97,17 @@ export class CheckoutComponent implements OnInit {
     if (this.loading) {
       return;
     }
-      this.toggleLoading()
-      this.checkoutService.checkout(this.form).subscribe((res) => {
+    this.form.price = this.total;
+    this.toggleLoading()
+    this.checkoutService.checkout(this.form).subscribe(res => {
       console.log("🚀 ~ file: checkout.component.ts:69 ~ CheckoutComponent ~ this.checkoutService.checkout ~ res", res)
-      this.navigateToRoute()
-      
-    });
+      this.navigateToRoute(res.id)
+    }, error => {
+      this.error = error.error.message
+      console.log(error.error.errors);
+    },
+      () => {
+        // loading.dismiss();
+      });
   }
 }
