@@ -92,7 +92,6 @@ export class CheckoutComponent implements OnInit {
   }
 
   checkout() {
-<<<<<<< HEAD
     if (this.loading) {
       return;
     }
@@ -101,11 +100,6 @@ export class CheckoutComponent implements OnInit {
       console.log("🚀 ~ file: checkout.component.ts:69 ~ CheckoutComponent ~ this.checkoutService.checkout ~ res", res)
       this.navigateToRoute()
       
-=======
-    this.form.price = this.price;
-    this.checkoutService.checkout(this.form).subscribe((res) => {
-
->>>>>>> 1debb18c7816fb4dc360b26b3ab97fe13001f019
     });
   }
 }
