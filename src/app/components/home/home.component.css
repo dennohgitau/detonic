@@ -433,7 +433,7 @@ body {
   #hero {
     width: 100%;
     height: calc(100vh - 110px);
-    background: url("../../../assets/img/hero-bg.jpg") top center;
+    background: url("../../../assets/img/detonicbg2.jpg") top center;
 
     background-size: cover;
     position: relative;
@@ -451,7 +451,7 @@ body {
 
   #hero h1 {
     margin: 0 0 10px 0;
-    font-size: 48px;
+    font-size: 100px;
     font-weight: 700;
     line-height: 56px;
     text-transform: uppercase;
@@ -461,6 +461,8 @@ body {
   #hero h2 {
     color: #eee;
     margin-bottom: 30px;
+    margin-top: 30px;
+
     font-size: 24px;
   }
 
