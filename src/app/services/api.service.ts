@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ export class ApiService {
   getData() {
     return this.api.get('https://detonic.komfycollect.com/api/sales/1')
   }
-  successData(id: string){
+  successData(id: any): Observable<any>{
     return this.api.get('https://detonic.komfycollect.com/api/sales/'+id)
 
   }

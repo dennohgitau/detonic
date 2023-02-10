@@ -26,23 +26,27 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
+                  <tr class="primary">
+                    <td>{{order.product}}</td>
+                    <td>{{order.quantity}}</td>
+                    <td>{{order.price}}</td>
                   </tr>
+                </tbody>
+
+                <tfoot>
+
                   <tr>
-                    <td>Shipping charge</td>
-                    <td></td>
-                    <td>KES 0.00</td>
+                    <th></th>
+                    <th>Shipping charge</th>
+                    <th>KES 0.00</th>
 
                   </tr>
                   <tr>
-                    <td>Total</td>
-                    <td></td>
-                    <td>KES 1000</td>
+                    <th></th>
+                    <th>Total</th>
+                    <th>KES 1000</th>
                   </tr>
-                </tbody>
+                </tfoot>
               </table>
               
               
@@ -63,10 +67,10 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>John Doe</td>
-                    <td>Fedha Estate</td>
-                    <td>0712345678</td>
-                    <td>johndoe@gmail.com</td>
+                    <td>{{order.name}}</td>
+                    <td>{{order.address}}</td>
+                    <td>{{order.phone}}</td>
+                    <td>{{order.email}}</td>
 
                   </tr>
                  
@@ -77,8 +81,8 @@
 
           </div>
           <div class="py-10 text-center">
-              <a routerLink="/home" class="px-12 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3">
-                  GO BACK 
+              <a href="https://komfy-shop.com/" class="px-12 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3">
+                  Continue Shopping 
              </a>
           </div>
       </div>
