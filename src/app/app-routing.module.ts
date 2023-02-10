@@ -5,8 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SuccessComponent } from './components/success/success.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'checkout/:id', component: CheckoutComponent },
   { path: 'success/:id', component: SuccessComponent },
 
