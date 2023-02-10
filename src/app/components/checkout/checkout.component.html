@@ -18,16 +18,16 @@
 
 
 
-
             <div class="h-screen">
                 <div class="py-12">
                     <div class="max-w-lg mx-auto shadow-lg rounded-lg  md:max-w-5xl">
                         <div class="md:flex ">
 
-                                <div class="w-full p-4 px-5 py-5">
+                            <div class="w-full p-4 px-5 py-5">
 
                                 <div class="md:grid md:grid-cols-3 gap-2">
                                     <div class="col-span-2 p-5">
+
                                         <h1 class="text-xl font-medium ">Shopping Cart</h1>
                                         <div class="flex justify-between items-center mt-6 pt-6">
                                             <div class="flex  items-center">
@@ -122,12 +122,18 @@
                                         <div style="height:10px"></div>
                                         <hr>
                                         <div style="height:10px"></div>
-                                        <span class="text-xl font-medium text-gray-100 block pb-3">Shipping Address</span>
+                                        <span class="text-xl font-medium text-gray-100 block pb-3">Shipping
+                                            Address</span>
+                                        <h4 style="color: red;">{{ error }}</h4>
+
                                         <div class="flex justify-center flex-col pt-3">
                                             <label class="text-xs text-gray-400 ">Name</label>
                                             <input type="text"
                                                 class="focus:outline-none w-full h-6 bg-gray-800 text-white placeholder-gray-300 text-sm border-b border-gray-600 py-4"
                                                 placeholder="" [(ngModel)]="form.name">
+                                                <!-- <div *ngFor="let item of errors">
+                                                    <small id="error">{{ item.name }}</small>
+                                                </div> -->
                                         </div>
                                         <div class="flex justify-center flex-col pt-3">
                                             <label class="text-xs text-gray-400 ">Phone</label>
@@ -156,7 +162,8 @@
 
                                         <button
                                             class="h-12 w-full bg-blue-500 rounded focus:outline-none text-white hover:bg-blue-600"
-                                            (click)="checkout()" [disabled]="loading">{{ loading ? 'Placing your Order...' : 'Check Out' }} </button>
+                                            (click)="checkout()" [disabled]="loading" style="margin-top: 15px;">{{
+                                            loading ? 'Placing your Order...' : 'Check Out' }} </button>
                                     </div>
                                 </div>
 
@@ -173,7 +180,7 @@
         <div class="col-span-12 rounded-lg border p-16 sm:col-span-4">
             <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                 <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="110">
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="110" color="#ff9800">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75">
                     </path>
@@ -187,13 +194,13 @@
             <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
 
                 <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="110">
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="180" color="#ff9800">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z">
                     </path>
                 </svg>
                 <div class="mt-5 sm:mt-0" style="margin-left: 30px;">
-                    <h2 class="text-lg font-bold text-gray-900">THE DELIVERY IS FREE</h2>
+                    <h2 class="text-lg font-bold text-gray-900">FREE DELIVERY</h2>
                     <p class="mt-1 text-xs text-gray-700">This price inlcudes all taxes and VAT, and the delivery is
                         free. The product will be delivered to your doorstep within 2-5 business days from the date on
                         which you placed your order via this website.</p>
@@ -201,7 +208,7 @@
             </div>
             <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                 <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="110">
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="110" color="#ff9800">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z">
                     </path>
