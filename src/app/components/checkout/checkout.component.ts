@@ -11,7 +11,15 @@ export class CheckoutComponent implements OnInit {
   qty = this.route.snapshot.paramMap.get('id');
 
   form = {
-    qty: this.route.snapshot.paramMap.get('id')
+    quantity: this.route.snapshot.paramMap.get('id'),
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    city: '',
+    postal_code: '',
+    price: 0,
+    product: 'Detonic'
   };
 
   price = 0;
@@ -57,7 +65,7 @@ export class CheckoutComponent implements OnInit {
   onSelectionChange(event: any) {
     console.log(event.target.value);
     this.items.forEach(element => {
-      if (this.form.qty === element.qty) {
+      if (this.form.quantity === element.qty) {
         this.price = element.price;
         this.total = element.total;
       }
@@ -65,8 +73,9 @@ export class CheckoutComponent implements OnInit {
   }
 
   checkout() {
+    this.form.price = this.price;
     this.checkoutService.checkout(this.form).subscribe((res) => {
-      console.log("🚀 ~ file: checkout.component.ts:69 ~ CheckoutComponent ~ this.checkoutService.checkout ~ res", res)
+
     });
   }
 }
