@@ -1,14 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CheckoutService } from 'src/app/services/checkout.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.css']
-})
+  styleUrls: ['./checkout.component.css'],
+  })
+
 export class CheckoutComponent implements OnInit {
+  
+
   qty = this.route.snapshot.paramMap.get('id');
+  loading = false;
 
   form = {
     qty: this.route.snapshot.paramMap.get('id')
@@ -36,7 +42,7 @@ export class CheckoutComponent implements OnInit {
     }
   ];
 
-  constructor(private route: ActivatedRoute, private checkoutService: CheckoutService) { }
+  constructor(private route: ActivatedRoute, private checkoutService: CheckoutService, private router: Router) { }
 
 
   ngOnInit() {
@@ -63,10 +69,29 @@ export class CheckoutComponent implements OnInit {
       }
     });
   }
+  navigateToRoute() {
+    this.router.navigate(['/success']);
+  }
+  toggleLoading(){
+    this.loading = true;
+
+    setTimeout(() => {
+      this.loading = false;
+    }, 3000);
+    console.log(this.loading);
+    
+
+  }
 
   checkout() {
-    this.checkoutService.checkout(this.form).subscribe((res) => {
+    if (this.loading) {
+      return;
+    }
+      this.toggleLoading()
+      this.checkoutService.checkout(this.form).subscribe((res) => {
       console.log("🚀 ~ file: checkout.component.ts:69 ~ CheckoutComponent ~ this.checkoutService.checkout ~ res", res)
+      this.navigateToRoute()
+      
     });
   }
 }
