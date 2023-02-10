@@ -15,7 +15,7 @@
           <p class="text-gray-600 my-2">Thank you for making your order with us.</p>
           <p> Your Details are as below  </p>
           <h2 style="color: rgb(42, 116, 93);"><b>Order Details</b></h2>
-          
+
           <div class="table">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
@@ -26,7 +26,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="primary">
+                  <tr class="table-primary">
                     <td>{{order.product}}</td>
                     <td>{{order.quantity}}</td>
                     <td>{{order.price}}</td>
@@ -44,12 +44,12 @@
                   <tr>
                     <th></th>
                     <th>Total</th>
-                    <th>KES 1000</th>
+                    <th>{{order.price}}</th>
                   </tr>
                 </tfoot>
               </table>
-              
-              
+
+
 
           </div>
           <h2 style="color: rgb(42, 116, 93);"><b>Shipping Address</b></h2>
@@ -66,23 +66,23 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr class="table-success">
                     <td>{{order.name}}</td>
                     <td>{{order.address}}</td>
                     <td>{{order.phone}}</td>
                     <td>{{order.email}}</td>
 
                   </tr>
-                 
+
                 </tbody>
               </table>
-              
-              
+
+
 
           </div>
           <div class="py-10 text-center">
               <a href="https://komfy-shop.com/" class="px-12 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3">
-                  Continue Shopping 
+                  Continue Shopping
              </a>
           </div>
       </div>
