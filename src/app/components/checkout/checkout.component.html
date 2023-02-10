@@ -12,16 +12,19 @@
 <body>
     <!-- component -->
     <div class="mx-auto grid grid-cols-12 gap-4 bg-zinc-50 p-1">
-        <div class="header col-span-12 rounded-lg border  bg-gray-600 py-8">
-            <!-- Header content -->
-        </div>
+        <!-- <div class="header col-span-12 rounded-lg border  bg-gray-600 py-8">
+        </div> -->
         <div class="col-span-12 rounded-lg border sm:col-span-8">
+
+
+
 
             <div class="h-screen">
                 <div class="py-12">
                     <div class="max-w-lg mx-auto shadow-lg rounded-lg  md:max-w-5xl">
                         <div class="md:flex ">
-                            <div class="w-full p-4 px-5 py-5">
+
+                                <div class="w-full p-4 px-5 py-5">
 
                                 <div class="md:grid md:grid-cols-3 gap-2">
                                     <div class="col-span-2 p-5">
@@ -38,21 +41,11 @@
                                             <div class="flex justify-center items-center">
 
                                                 <div class="pr-8 flex ">
-                                                    <select [(ngModel)]="form.qty" class="form-select"
+                                                    <select [(ngModel)]="form.quantity" class="form-select"
                                                         (change)="onSelectionChange($event)">
                                                         <option [value]="item.qty" *ngFor="let item of items">{{
                                                             item.qty }}</option>
                                                     </select>
-
-
-                                                    <!-- <mat-form-field appearance="fill">
-                                                  <mat-label>Quantity</mat-label>
-                                                  <mat-select [(ngModel)]="form.qty">
-                                                    <mat-option *ngFor="let item of items" [value]="item.qty">
-                                                      {{item.qty}}
-                                                    </mat-option>
-                                                  </mat-select>
-                                                </mat-form-field> -->
                                                 </div>
 
                                                 <div class="pr-8 ">
@@ -75,15 +68,12 @@
                                                 <div>
                                                     <i class="fa fa-close text-xs font-medium"></i>
                                                 </div>
-
                                             </div>
                                         </div>
-
 
                                         <div class="flex justify-between items-center mt-6 pt-6 border-t">
                                             <div class="flex items-center">
                                                 <i class="fa fa-arrow-left text-sm pr-2"></i>
-                                                <!-- <span class="text-md  font-medium text-blue-500">Continue Shopping</span> -->
                                             </div>
 
                                             <div class="flex justify-center items-end">
@@ -91,6 +81,7 @@
                                                 <span class="text-lg font-bold text-gray-800 "> Ksh {{ total }}</span>
                                             </div>
                                         </div>
+
                                     </div>
                                     <div class=" p-5 bg-gray-800 rounded overflow-visible">
                                         <span class="text-xl font-medium text-gray-100 block pb-3">Payment
@@ -113,8 +104,8 @@
 
                                                 <div class="flex justify-between items-center mt-3">
 
-                                                    <span class="text-xs  text-gray-200">Giga Tamarashvili</span>
-                                                    <span class="text-xs  text-gray-200">Account Name: </span>
+                                                    <!-- <span class="text-xs  text-gray-200">Giga Tamarashvili</span>
+                                                    <span class="text-xs  text-gray-200">Account Name: </span> -->
                                                 </div>
                                             </div>
                                             <div class="flex justify-center  items-center flex-col">
@@ -126,32 +117,43 @@
                                                     card</span>
 
                                             </div>
-
-
-
-
                                         </div>
+
+                                        <div style="height:10px"></div>
+                                        <hr>
+                                        <div style="height:10px"></div>
+                                        <span class="text-xl font-medium text-gray-100 block pb-3">Shipping Address</span>
                                         <div class="flex justify-center flex-col pt-3">
-                                            <label class="text-xs text-gray-400 ">Regular price</label>
+                                            <label class="text-xs text-gray-400 ">Name</label>
                                             <input type="text"
                                                 class="focus:outline-none w-full h-6 bg-gray-800 text-white placeholder-gray-300 text-sm border-b border-gray-600 py-4"
-                                                placeholder="Giga Tamarashvili" disabled value="4900">
-                                        </div>
-
-
-
-                                        <div class="flex justify-center flex-col pt-3">
-                                            <label class="text-xs text-gray-400 ">Discounted price</label>
-                                            <input type="text"
-                                                class="focus:outline-none w-full h-6 bg-gray-800 text-white placeholder-gray-300 text-sm border-b border-gray-600 py-4"
-                                                placeholder="Giga Tamarashvili" disabled [value]="price">
+                                                placeholder="" [(ngModel)]="form.name">
                                         </div>
                                         <div class="flex justify-center flex-col pt-3">
-                                            <label class="text-xs text-gray-400 ">Save</label>
+                                            <label class="text-xs text-gray-400 ">Phone</label>
                                             <input type="text"
                                                 class="focus:outline-none w-full h-6 bg-gray-800 text-white placeholder-gray-300 text-sm border-b border-gray-600 py-4"
-                                                placeholder="Giga Tamarashvili" disabled [value]="total - price">
+                                                placeholder="" [(ngModel)]="form.phone">
                                         </div>
+                                        <div class="flex justify-center flex-col pt-3">
+                                            <label class="text-xs text-gray-400 ">Address</label>
+                                            <input type="text"
+                                                class="focus:outline-none w-full h-6 bg-gray-800 text-white placeholder-gray-300 text-sm border-b border-gray-600 py-4"
+                                                placeholder="" [(ngModel)]="form.address">
+                                        </div>
+                                        <div class="flex justify-center flex-col pt-3">
+                                            <label class="text-xs text-gray-400 ">Email</label>
+                                            <input type="text"
+                                                class="focus:outline-none w-full h-6 bg-gray-800 text-white placeholder-gray-300 text-sm border-b border-gray-600 py-4"
+                                                placeholder="" [(ngModel)]="form.email">
+                                        </div>
+                                        <div class="flex justify-center flex-col pt-3">
+                                            <label class="text-xs text-gray-400 ">City</label>
+                                            <input type="text"
+                                                class="focus:outline-none w-full h-6 bg-gray-800 text-white placeholder-gray-300 text-sm border-b border-gray-600 py-4"
+                                                placeholder="" [(ngModel)]="form.city">
+                                        </div>
+
                                         <button
                                             class="h-12 w-full bg-blue-500 rounded focus:outline-none text-white hover:bg-blue-600"
                                             (click)="checkout()">Check
@@ -169,39 +171,51 @@
                 </div>
             </div>
         </div>
-        <div class="col-span-12 rounded-lg border border-gray-400 bg-gray-200 p-16 sm:col-span-4">
+        <div class="col-span-12 rounded-lg border p-16 sm:col-span-4">
             <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
-                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="110">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"></path>
-                      </svg>
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="110">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75">
+                    </path>
+                </svg>
                 <div class="mt-5 sm:mt-0" style="margin-left: 30px;">
                     <h2 class="text-lg font-bold text-gray-900">100% MONEY BACK GUARANTEE</h2>
-                    <p class="mt-1 text-xs text-gray-700">If you're not satisfied with the product, return it and we will give your money back – no questions asked.</p>
+                    <p class="mt-1 text-xs text-gray-700">If you're not satisfied with the product, return it and we
+                        will give your money back – no questions asked.</p>
                 </div>
             </div>
             <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
 
-                  <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="110">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path>
-                  </svg>
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="110">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z">
+                    </path>
+                </svg>
                 <div class="mt-5 sm:mt-0" style="margin-left: 30px;">
                     <h2 class="text-lg font-bold text-gray-900">THE DELIVERY IS FREE</h2>
-                    <p class="mt-1 text-xs text-gray-700">This price inlcudes all taxes and VAT, and the delivery is free. The product will be delivered to your doorstep within 2-5 business days from the date on which you placed your order via this website.</p>
+                    <p class="mt-1 text-xs text-gray-700">This price inlcudes all taxes and VAT, and the delivery is
+                        free. The product will be delivered to your doorstep within 2-5 business days from the date on
+                        which you placed your order via this website.</p>
                 </div>
             </div>
             <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
-                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="110">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"></path>
-                  </svg>
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="110">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z">
+                    </path>
+                </svg>
                 <div class="mt-5 sm:mt-0" style="margin-left: 30px;">
                     <h2 class="text-lg font-bold text-gray-900">PAYMENT METHOD</h2>
-                    <p class="mt-1 text-xs text-gray-700">Payment method is cash on delivery and Mobile Money – you pay nothing in advance. The delivery of the product is free.</p>
+                    <p class="mt-1 text-xs text-gray-700">Payment method is cash on delivery and Mobile Money – you pay
+                        nothing in advance. The delivery of the product is free.</p>
                 </div>
             </div>
         </div>
-        <div class="footer col-span-12 rounded-lg border border-gray-800 bg-gray-700 p-6">
-            <!-- Footer content -->
-        </div>
+        <!-- <div class="footer col-span-12 rounded-lg border border-gray-800 bg-gray-700 p-6">
+        </div> -->
     </div>
 
 </body>
