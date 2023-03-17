@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CheckoutService } from 'src/app/services/checkout.service';
 import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -11,8 +12,7 @@ import { Router } from '@angular/router';
 })
 
 export class CheckoutComponent implements OnInit {
-
-
+  
   qty = this.route.snapshot.paramMap.get('id');
   loading = false;
   error  = '';
@@ -70,6 +70,10 @@ export class CheckoutComponent implements OnInit {
       this.total = 4900;
     }
   }
+  @ViewChild('address')
+  address!: ElementRef;
+
+  
   onSelectionChange(event: any) {
     console.log(event.target.value);
     this.items.forEach(element => {
